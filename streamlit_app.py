@@ -8,12 +8,46 @@ if 'dict_conta' not in st.session_state:
 
 dict_conta = st.session_state.dict_conta
 
-conta = [  # (mesmo conteúdo omitido para brevidade, igual ao seu)
-    "1.1.1.01.01", "1.1.1.01.02", "1.1.1.02.01", "1.1.1.03.01",  # ...
+conta = [
+    "1.1.1.01.01", "1.1.1.01.02", "1.1.1.02.01", "1.1.1.03.01",
+    "1.1.2.01.01", "1.1.2.01.02", "1.1.2.02.01", "1.1.2.02.02",
+    "1.1.2.02.03", "1.1.2.02.04", "1.1.2.02.05", "1.1.2.03.01",
+    "1.1.2.04.01", "1.1.2.04.02", "1.1.2.04.03", "1.1.2.04.04",
+    "1.1.2.04.05", "1.1.2.05.01", "1.1.2.05.02", "1.1.2.05.03",
+    "1.1.2.05.04", "1.1.2.05.05", "1.1.2.05.06", "1.1.2.05.07",
+    "1.1.2.05.08", "1.1.2.05.09", "1.1.2.05.10", "1.1.2.06.01",
+    "1.1.2.06.02", "1.1.2.06.03", "1.1.2.06.04", "1.1.2.06.05",
+    "1.1.2.06.06", "1.1.3.01.01", "1.1.3.01.02", "1.1.3.02.01",
+    "1.1.3.02.02", "1.1.3.02.03", "1.1.3.02.04", "1.1.3.02.05",
+    "1.1.3.03.01", "1.1.3.03.02", "1.1.4.01.01", "1.1.4.01.02",
+    "1.1.6.01.99", "1.2.1.01.01", "1.2.1.01.02", "1.2.1.01.03",
+    "1.2.1.01.04", "1.2.1.01.05", "1.2.1.01.01", "1.2.1.01.02",
+    "1.2.2.01.01", "1.2.2.01.02", "1.2.2.01.03", "1.2.2.01.04",
+    "1.2.2.01.05", "1.2.3.01.10", "1.2.3.01.11", "1.2.3.01.20",
+    "1.2.3.01.21", "1.2.3.01.30", "1.2.3.01.31", "1.2.3.01.40",
+    "1.2.3.01.41", "1.2.3.01.50", "1.2.3.01.51", "1.2.3.01.60",
+    "1.2.3.01.61", "1.2.3.02.20", "1.2.3.02.30"
 ]
 
-descricao = [  # (mesmo conteúdo omitido para brevidade, igual ao seu)
-    "Caixa", "Fundo Fixo de Caixa", "Bancos Conta Movimento", "Aplicação Financeira de Liquidez Imediata",  # ...
+descricao = [
+    "Caixa", "Fundo Fixo de Caixa", "Bancos Conta Movimento", "Aplicação Financeira de Liquidez Imediata",
+    "Contas a Receber", "PECLD", "Adiantamento Quinzenal", "Empréstimos a colaboradores",
+    "Antecipação de Salários", "Antecipação de Férias", "Antecipação de 13º Salário", "Adiantamentos a Fornecedores",
+    "IRRF", "CSLL Retida na Fonte", "PIS Retido na fonte", "COFINS Retida na Fonte",
+    "INSS Retido na Fonte", "IPI a Recuperar", "ICMS a Recuperar", "PIS a Recuperar - Crédito Básico",
+    "PIS a Recuperar - Crédito Presumido", "COFINS a Recuperar - Crédito Básico", "COFINS a Recuperar - Crédito Presumido", "CIDE a Recuperar",
+    "Outros Impostos e Contribuições a Recuperar", "Saldo Negativo - IRPJ", "Saldo Negativo - CSLL", "IRPJ Estimativa",
+    "CSLL Estimativa", "COFINS a Compensar", "PIS/PASEP a Compensar", "IPI a Compensar",
+    "INSS a compensar", "Mercadorias para Revenda", "(-) Perda por Ajuste ao Valor Realizável Líquido - Estoque Mercadorias", "Insumos (materiais diretos)",
+    "Outros Materiais", "Produtos em Elaboração", "Produtos Acabados", "(-) Perda por Ajuste ao Valor Realizável Líquido - Estoque Produtos",
+    "Materiais para Consumo", "Materiais para Reposição", "Aluguéis e Arredamentos Pagos Antecipadamente", "Prêmios de Seguros a Apropriar",
+    "Outras Despesas Antecipadas", "Clientes - Longo Prazo", "PCLD Longo Prazo", "Juros a apropriar Clientes LP",
+    "Empréstimos de LP", "Juros a apropriar Empréstimos LP", "IRPJ Diferido", "CSLL Diferido",
+    "Investimentos em Controladas", "Ágio pago pela mais valia", "Ágio pago por Goodwill", "Investimentos em Coligadas",
+    "Investimentos em Joint Ventures", "Terrenos", "Impairment Terrenos", "Edifícios e Construções",
+    "Impairment Edifícios e Construções", "Benfeitorias em Imóveis de Terceiros", "Impairment Benfeitorias em Imóveis de Terceiros", "Máquinas, Equipamentos e Instalações Industriais",
+    "Impairment Máquinas, Equipamentos e Instalações Industriais", "Móveis, Utensílios e Instalações Comerciais", "Impairment Móveis, Utensílios e Instalações Comerciais", "Veículos",
+    "Impairment Veículos", "Depreciação Acumulada - Edifícios e Construções", "Depreciação Acumulada - Benfeitorias em Imóveis de Terceiros"
 ]
 
 descricao_to_conta = dict(zip(descricao, conta))
@@ -53,7 +87,7 @@ with st.form("my_form"):
         st.session_state.dict_conta = {}
         st.info("Lançamentos limpos com sucesso!")
 
-# === Gerar dados da tabela ===
+
 dados_tabela = []
 
 saldos_por_conta = {}
@@ -77,7 +111,7 @@ for nome_conta, dados in dict_conta.items():
             'ID Conta': id_conta,
             'Conta': nome_conta,
             'Data': data,
-            'Débito': valor,
+            'Débito': f"{valor:.2f}",
             'Crédito': "",
             'Saldo Débito': saldo_debito,
             'Saldo Crédito': saldo_credito
@@ -89,7 +123,7 @@ for nome_conta, dados in dict_conta.items():
             'Conta': nome_conta,
             'Data': data,
             'Débito': "",
-            'Crédito': valor,
+            'Crédito': f"{valor:.2f}",
             'Saldo Débito': saldo_debito,
             'Saldo Crédito': saldo_credito
         })
