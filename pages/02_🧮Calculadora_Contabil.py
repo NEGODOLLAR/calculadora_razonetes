@@ -15,27 +15,23 @@ st.set_page_config(
 
 with st.sidebar:
         # Espaço vazio para empurrar o logo para baixo
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
+        st.title("🔗 Mais Informações para MEI")
+        st.markdown("""
+            <p style="font-size:15px; margin-top:15px;">
+                <a href="https://sebrae.com.br/sites/PortalSebrae/mei" target="_blank" style="color:#4169E1; text-decoration:none;">
+                    👉 Acesse agora o Portal Sebrae MEI
+                </a>
+            </p>
+
+            <p style="font-size:16px; margin-top:20px;">Lá você encontra orientações sobre:</p>
+            <ul style="font-size:16px; color:#FFFFFF;">
+                <li>📝 Regularização</li>
+                <li>💰 Tributação</li>
+                <li>🧾 Emissão de nota</li>
+                <li>🎁 Benefícios</li>
+                <li>🔍 E mais!</li>
+            </ul>
+        """, unsafe_allow_html=True)
         st.markdown("---")
         st.markdown(
         """
