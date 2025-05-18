@@ -1,7 +1,129 @@
+
 import streamlit as st
 import pandas as pd
-import datetime
 from itertools import zip_longest
+import streamlit.components.v1 as components
+
+st.set_page_config(
+    page_title="Calculadora Contábil",
+    layout="centered",
+    page_icon="🧮",
+    menu_items={}
+)
+
+# Função para criar sidebar personalizado
+
+with st.sidebar:
+        # Espaço vazio para empurrar o logo para baixo
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.markdown("---")
+        st.markdown(
+        """
+        <span style='color: #FFFFFF; font-weight: bold;'>Help MEI</span><br>
+        <span style='color: #FF5F15; font-style: italic;'>Visualize hoje. Cresça amanhã.</span>
+        """, 
+        unsafe_allow_html=True
+    )
+        
+
+# Partículas de fundo
+particles_background = """
+<style>
+    #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+</style>
+<div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": "#ffffff"
+        },
+        "shape": {
+            "type": "circle"
+        },
+        "opacity": {
+            "value": 0.5,
+            "random": false
+        },
+        "size": {
+            "value": 3,
+            "random": true
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 1,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 1,
+            "direction": "none",
+            "out_mode": "out"
+        }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            }
+        },
+        "modes": {
+            "repulse": {
+                "distance": 100
+            },
+            "push": {
+                "particles_nb": 4
+            }
+        }
+    },
+    "retina_detect": true
+});
+</script>
+"""
+
+components.html(particles_background, height=150, width=2000, scrolling=False)
 
 
 # Inicialização do estado da sessão
@@ -270,10 +392,38 @@ def gerar_relatorio_patrimonio():
     }
 
 # Interface
-st.title("Help MEI - Contabilidade")
+st.markdown("""
+<style>
+    .calculator-header {
+        color: #FFFFFF;
+        font-size: 32px !important;
+        font-weight: 700;
+        text-align: center;
+        margin: 20px 0 15px 0;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #FFFFFF;
+    }
+    
+    .entry-subheader {
+        font-size: 22px !important;
+        font-weight: 600;
+        text-align: center;
+        margin: 15px 0;
+        background: linear-gradient(90deg, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: rainbow 5s ease infinite;
+        background-size: 400% 100%;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Enhanced title and subheader
+st.markdown('<div class="calculator-header">🧮 CALCULADORA CONTÁBIL 🧮</div>', unsafe_allow_html=True)
 
 with st.form("my_form"):
-    st.subheader("Novo Lançamento")
+    st.markdown('<div class="entry-subheader">NOVO LANÇAMENTO</div>', unsafe_allow_html=True)
     
     data = st.date_input("Data")
     valor = st.number_input("Valor", min_value=0.01, step=0.01, format="%.2f")
@@ -423,3 +573,25 @@ if st.session_state.dict_conta:
         st.divider()
 else:
     st.info("Nenhum lançamento registrado. Use o formulário acima para adicionar.")
+
+# Rodapé no final da página
+st.markdown("""
+<style>
+    .footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 50px;
+    }
+</style>
+<div class="footer">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Licença Creative Commons" style="border-width:0" 
+             src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    Este trabalho está licenciado sob uma 
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        Licença Creative Commons Atribuição 4.0 Internacional
+    </a>.
+</div>
+""", unsafe_allow_html=True)
