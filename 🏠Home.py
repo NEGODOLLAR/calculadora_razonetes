@@ -12,10 +12,10 @@ st.set_page_config(
     menu_items={}
 )
 
-st.logo(
-    'assets\HELPMEI.png',
-    icon_image='assets\logo.png',
-)
+# st.logo(
+#     'assets\HELPMEI.png',
+#     icon_image='assets\logo.png',
+# )
 
 # Função para criar sidebar personalizado
 
