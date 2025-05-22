@@ -8,14 +8,14 @@ import os
 st.set_page_config(
     page_title="Help MEi",
     layout="centered",
-    page_icon="assets\logo.png",
+    page_icon="assets/logo.png",
     menu_items={}
 )
 
-# st.logo(
-#     'assets\HELPMEI.png',
-#     icon_image='assets\logo.png',
-# )
+st.logo(
+    'assets/HELPMEI.png',
+    icon_image='assets/logo.png',
+)
 
 # Função para criar sidebar personalizado
 
@@ -148,7 +148,7 @@ with col1:
     st.markdown("**Indicadores Econômicos Atualizados**")
 
 with col2:
-    st.image("assets\calculator_business_finance_office_marketing_icon.png", width=80)
+    st.image("assets/calculator_business_finance_office_marketing_icon.png", width=80)
     st.markdown("**Calculadora Contábil Inteligente**")
 
 with col3:
@@ -156,7 +156,7 @@ with col3:
     st.markdown("**Visual Dinâmico e Intuitivo**")
 
 with col4:
-    st.image("assets\progress_growth_graph_analysis_success_icon.png", width=80)
+    st.image("assets/progress_growth_graph_analysis_success_icon.png", width=80)
     st.markdown("**Análises que fazem sentido para o seu dia a dia**")
 
 
