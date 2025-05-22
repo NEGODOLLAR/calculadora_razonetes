@@ -14,7 +14,6 @@ st.set_page_config(
 
 st.logo(
     'assets\HELPMEI.png',
-    size=("large"),
     icon_image='assets\logo.png',
 )
 
@@ -146,19 +145,19 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.image("assets/bar_chart_financial_graph_graphic_icon (2).png", width=80)
-    st.markdown("✅ **Indicadores Econômicos Atualizados**")
+    st.markdown("**Indicadores Econômicos Atualizados**")
 
 with col2:
     st.image("assets\calculator_business_finance_office_marketing_icon.png", width=80)
-    st.markdown("✅ **Calculadora Contábil Inteligente**")
+    st.markdown("**Calculadora Contábil Inteligente**")
 
 with col3:
     st.image("assets/app_browser_essential_object_ui_icon.png", width=80)
-    st.markdown("✅ **Visual Dinâmico e Intuitivo**")
+    st.markdown("**Visual Dinâmico e Intuitivo**")
 
 with col4:
     st.image("assets\progress_growth_graph_analysis_success_icon.png", width=80)
-    st.markdown("✅ **Análises que fazem sentido para o seu dia a dia**")
+    st.markdown("**Análises que fazem sentido para o seu dia a dia**")
 
 
  
